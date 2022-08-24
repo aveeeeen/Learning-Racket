@@ -1,0 +1,32 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname |week1(chap1)|) (read-case-sensitive #t) (teachpacks ((lib "batch-io.rkt" "teachpack" "2htdp") (lib "image.rkt" "teachpack" "2htdp"))) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ((lib "batch-io.rkt" "teachpack" "2htdp") (lib "image.rkt" "teachpack" "2htdp")) #f)))
+(define (rect x y mode color)
+  (rectangle x y mode color))
+
+;exercise 7
+;you go to the mall if !sunny || if friday
+
+(define sunny #false)
+(define friday #true)
+(define goto_mall (or (not sunny) (not friday)) )
+
+goto_mall
+
+
+;exercise 9.
+
+(define string1 "Hazimemasite konnnitiha")
+(define image1 (rect 5 5 "solid" "red"))
+(define num1 3)
+(define negative_num -234)
+(define boolean1 #false)
+
+
+(define in negative_num)
+
+(if (string? in) (string-length in)
+  (if (image? in) (* (image-width in) (image-height in))
+    (if (number? in) (if (< in 0) 20 (- in 1))
+      10)))
+
